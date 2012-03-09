@@ -1,0 +1,19 @@
+name: WorldRules
+version: 0.6
+main: uk.co.jacekk.bukkit.worldrules.WorldRules
+load: startup
+commands:
+    rules:
+        description: Shows the rules for the current world
+        usage: /rules
+    worldrules:
+        description: Provides various commands for managing the rules
+        usage: /worldrules <option>
+        aliases: [wr]
+permissions:
+    worldrules.rules.show:
+        description: Allows the use of the /rules command
+        default: true
+    worldrules.rules.reload:
+        description: Allows the use of the /worldrules reload command
+        default: op
