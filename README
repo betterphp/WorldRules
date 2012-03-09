@@ -1,0 +1,7 @@
+This plugin was created for my public server and is being released
+because it seems like there is no other way to do this. Essentially
+it will add a /rules command that is specific to the world the
+player is currently in allowing you to define rules that are only
+effective in a specific world. The config file allows you to defined
+global rules (shown in all worlds), world specific rules and set if
+you want the rules to be shown when a player enters a world or not.
