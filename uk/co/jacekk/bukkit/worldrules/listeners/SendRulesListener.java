@@ -1,4 +1,4 @@
-package uk.co.jacekk.bukkit.worldrules;
+package uk.co.jacekk.bukkit.worldrules.listeners;
 
 import java.util.ArrayList;
 
@@ -10,11 +10,13 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-public class WorldRulesPlayerListener implements Listener {
+import uk.co.jacekk.bukkit.worldrules.WorldRules;
+
+public class SendRulesListener implements Listener {
 	
 	private WorldRules plugin;
 	
-	public WorldRulesPlayerListener(WorldRules instance){
+	public SendRulesListener(WorldRules instance){
 		this.plugin = instance;
 	}
 	

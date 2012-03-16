@@ -1,15 +1,16 @@
-package uk.co.jacekk.bukkit.worldrules;
+package uk.co.jacekk.bukkit.worldrules.util;
 
 import java.util.logging.Logger;
 
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginDescriptionFile;
 
-public class WorldRulesLogger {
+public class PluginLogger {
 	
-	private WorldRules plugin;
+	private Plugin plugin;
 	private Logger logger;
 	
-	public WorldRulesLogger(WorldRules plugin){
+	public PluginLogger(Plugin plugin){
 		this.plugin = plugin;
 		this.logger = Logger.getLogger("Minecraft");
 	}

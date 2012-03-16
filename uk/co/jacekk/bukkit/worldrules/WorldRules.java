@@ -10,10 +10,16 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import uk.co.jacekk.bukkit.worldrules.commands.WorldRulesExecutor;
+import uk.co.jacekk.bukkit.worldrules.commands.RulesExecutor;
+import uk.co.jacekk.bukkit.worldrules.listeners.SendRulesListener;
+import uk.co.jacekk.bukkit.worldrules.listeners.NewWorldListener;
+import uk.co.jacekk.bukkit.worldrules.util.PluginLogger;
+
 public class WorldRules extends JavaPlugin {
 	
-	protected WorldRulesConfig config;
-	protected WorldRulesLogger log;
+	public WorldRulesConfig config;
+	public PluginLogger log;
 	
 	public void onEnable(){
 		String pluginFolder = this.getDataFolder().getAbsolutePath();
@@ -21,18 +27,18 @@ public class WorldRules extends JavaPlugin {
 		(new File(pluginFolder)).mkdirs();
 		
 		this.config = new WorldRulesConfig(new File(pluginFolder + File.separator + "config.yml"), this);
-		this.log = new WorldRulesLogger(this);
+		this.log = new PluginLogger(this);
 		
 		PluginManager manager = this.getServer().getPluginManager();
 		
-		manager.registerEvents(new WorldRulesWorldListener(this), this);
+		manager.registerEvents(new NewWorldListener(this), this);
 		
 		if (this.config.getBoolean("settings.rules-on-enter")){
-			manager.registerEvents(new WorldRulesPlayerListener(this), this);
+			manager.registerEvents(new SendRulesListener(this), this);
 		}
 		
-		this.getCommand("rules").setExecutor(new WorldRulesRulesExecutor(this));
-		this.getCommand("worldrules").setExecutor(new WorldRulesWorldRulesExecutor(this));
+		this.getCommand("rules").setExecutor(new RulesExecutor(this));
+		this.getCommand("worldrules").setExecutor(new WorldRulesExecutor(this));
 		
 		this.log.info("Enabled");
 	}
@@ -41,7 +47,7 @@ public class WorldRules extends JavaPlugin {
 		this.log.info("Disabled.");
 	}
 	
-	protected ArrayList<String> getRulesForWorld(World world){
+	public ArrayList<String> getRulesForWorld(World world){
 		String worldName = world.getName();
 		ArrayList<String> appliedRules = new ArrayList<String>();
 		

@@ -1,4 +1,4 @@
-package uk.co.jacekk.bukkit.worldrules;
+package uk.co.jacekk.bukkit.worldrules.commands;
 
 import java.util.ArrayList;
 
@@ -9,11 +9,13 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class WorldRulesRulesExecutor implements CommandExecutor {
+import uk.co.jacekk.bukkit.worldrules.WorldRules;
+
+public class RulesExecutor implements CommandExecutor {
 	
 	private WorldRules plugin;
 	
-	public WorldRulesRulesExecutor(WorldRules plugin){
+	public RulesExecutor(WorldRules plugin){
 		this.plugin = plugin;
 	}
 	

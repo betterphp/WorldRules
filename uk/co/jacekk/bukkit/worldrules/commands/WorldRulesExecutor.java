@@ -1,15 +1,17 @@
-package uk.co.jacekk.bukkit.worldrules;
+package uk.co.jacekk.bukkit.worldrules.commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-public class WorldRulesWorldRulesExecutor implements CommandExecutor {
+import uk.co.jacekk.bukkit.worldrules.WorldRules;
+
+public class WorldRulesExecutor implements CommandExecutor {
 	
 	private WorldRules plugin;
 	
-	public WorldRulesWorldRulesExecutor(WorldRules plugin){
+	public WorldRulesExecutor(WorldRules plugin){
 		this.plugin = plugin;
 	}
 	

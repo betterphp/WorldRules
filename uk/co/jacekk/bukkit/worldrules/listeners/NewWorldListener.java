@@ -1,15 +1,17 @@
-package uk.co.jacekk.bukkit.worldrules;
+package uk.co.jacekk.bukkit.worldrules.listeners;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.world.WorldInitEvent;
 
-public class WorldRulesWorldListener implements Listener {
+import uk.co.jacekk.bukkit.worldrules.WorldRules;
+
+public class NewWorldListener implements Listener {
 	
 	private WorldRules plugin;
 	
-	public WorldRulesWorldListener(WorldRules instance){
+	public NewWorldListener(WorldRules instance){
 		this.plugin = instance;
 	}
 	
