@@ -6,18 +6,16 @@ import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
-import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
+import uk.co.jacekk.bukkit.baseplugin.v2.event.BaseListener;
 import uk.co.jacekk.bukkit.worldrules.WorldRules;
 
-public class SendRulesListener implements Listener {
+public class SendRulesListener extends BaseListener<WorldRules> {
 	
-	private WorldRules plugin;
-	
-	public SendRulesListener(WorldRules instance){
-		this.plugin = instance;
+	public SendRulesListener(WorldRules plugin){
+		super(plugin);
 	}
 	
 	@EventHandler(priority = EventPriority.MONITOR)
