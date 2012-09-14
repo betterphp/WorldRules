@@ -39,11 +39,14 @@ public class WorldRules extends BasePlugin {
 	}
 	
 	public void sendRules(CommandSender sender, World world, ArrayList<String> rules){
+		ChatColor headerColour = ChatColor.valueOf(this.config.getString(Config.HEADER_COLOUR));
+		ChatColor ruleColour = ChatColor.valueOf(this.config.getString(Config.RULE_COLOUR));
+		
 		sender.sendMessage(ChatColor.BLACK + " ");
-		sender.sendMessage(ChatColor.DARK_GREEN + "Rules for '" + world.getName() + "':");
+		sender.sendMessage(headerColour + "Rules for '" + world.getName() + "':");
 		
 		for (int i = 0; i < rules.size(); ++i){
-			sender.sendMessage(ChatColor.GREEN + "    " + (i + 1) + ". " + rules.get(i));
+			sender.sendMessage(ruleColour + "    " + (i + 1) + ". " + rules.get(i));
 		}
 		
 		sender.sendMessage(ChatColor.BLACK + " ");
