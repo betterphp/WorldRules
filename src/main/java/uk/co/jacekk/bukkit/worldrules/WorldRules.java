@@ -39,8 +39,22 @@ public class WorldRules extends BasePlugin {
 	}
 	
 	public void sendRules(CommandSender sender, World world, ArrayList<String> rules){
-		ChatColor headerColour = ChatColor.valueOf(this.config.getString(Config.HEADER_COLOUR));
-		ChatColor ruleColour = ChatColor.valueOf(this.config.getString(Config.RULE_COLOUR));
+		ChatColor headerColour, ruleColour;
+		
+		try{
+			headerColour = ChatColor.valueOf(this.config.getString(Config.HEADER_COLOUR));
+			ruleColour = ChatColor.valueOf(this.config.getString(Config.RULE_COLOUR));
+		}catch (IllegalArgumentException e){
+			this.log.warn("Invalid colours given in config.yml, reverting to defaults.");
+			this.log.info("Valid colours are:");
+			
+			for (ChatColor colour : ChatColor.values()){
+				this.log.info("  - " + colour.name());
+			}
+			
+			headerColour = ChatColor.DARK_GREEN;
+			ruleColour = ChatColor.GREEN;
+		}
 		
 		sender.sendMessage(ChatColor.BLACK + " ");
 		sender.sendMessage(headerColour + "Rules for '" + world.getName() + "':");
