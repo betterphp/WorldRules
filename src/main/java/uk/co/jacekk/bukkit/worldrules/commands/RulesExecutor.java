@@ -7,8 +7,8 @@ import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import uk.co.jacekk.bukkit.baseplugin.v2.command.BaseCommandExecutor;
-import uk.co.jacekk.bukkit.baseplugin.v2.command.CommandHandler;
+import uk.co.jacekk.bukkit.baseplugin.v5.command.BaseCommandExecutor;
+import uk.co.jacekk.bukkit.baseplugin.v5.command.CommandHandler;
 import uk.co.jacekk.bukkit.worldrules.Permission;
 import uk.co.jacekk.bukkit.worldrules.WorldRules;
 

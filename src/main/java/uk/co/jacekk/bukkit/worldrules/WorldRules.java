@@ -9,9 +9,9 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import uk.co.jacekk.bukkit.baseplugin.v2.BasePlugin;
-import uk.co.jacekk.bukkit.baseplugin.v2.config.DynamicConfigKey;
-import uk.co.jacekk.bukkit.baseplugin.v2.config.PluginConfig;
+import uk.co.jacekk.bukkit.baseplugin.v5.BasePlugin;
+import uk.co.jacekk.bukkit.baseplugin.v5.config.PluginConfig;
+import uk.co.jacekk.bukkit.baseplugin.v5.config.PluginConfigKey;
 import uk.co.jacekk.bukkit.worldrules.commands.RulesExecutor;
 import uk.co.jacekk.bukkit.worldrules.listeners.SendRulesListener;
 
@@ -20,7 +20,7 @@ public class WorldRules extends BasePlugin {
 	public void onEnable(){
 		super.onEnable(true);
 		
-		this.config = new PluginConfig(new File(this.baseDirPath + File.separator + "config.yml"), Config.values(), this.log);
+		this.config = new PluginConfig(new File(this.baseDirPath + File.separator + "config.yml"), Config.class, this.log);
 		
 		if (this.config.getBoolean(Config.SHOW_RULES_ON_ENTER)){
 			this.pluginManager.registerEvents(new SendRulesListener(this), this);
@@ -33,7 +33,7 @@ public class WorldRules extends BasePlugin {
 		ArrayList<String> rules = new ArrayList<String>();
 		
 		rules.addAll(this.config.getStringList(Config.GLOBAL_RULES));
-		rules.addAll(this.config.getStringList(new DynamicConfigKey(Config.WORLD_RULES.getKey() + "." + world.getName(), Arrays.asList())));
+		rules.addAll(this.config.getStringList(new PluginConfigKey(Config.WORLD_RULES.getKey() + "." + world.getName(), Arrays.asList())));
 		
 		return rules;
 	}

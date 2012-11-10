@@ -2,31 +2,15 @@ package uk.co.jacekk.bukkit.worldrules;
 
 import java.util.Arrays;
 
-import uk.co.jacekk.bukkit.baseplugin.v2.config.PluginConfigKey;
+import uk.co.jacekk.bukkit.baseplugin.v5.config.PluginConfigKey;
 
-public enum Config implements PluginConfigKey {
+public class Config {
 	
-	SHOW_RULES_ON_ENTER(	"settings.rules-on-enter",	true),
-	HEADER_COLOUR(			"settings.header-colour",	"DARK_GREEN"),
-	RULE_COLOUR(			"settings.rule-colour",		"GREEN"),
+	public static final PluginConfigKey SHOW_RULES_ON_ENTER	= new PluginConfigKey("settings.rules-on-enter",	true);
+	public static final PluginConfigKey HEADER_COLOUR			= new PluginConfigKey("settings.header-colour",		"DARK_GREEN");
+	public static final PluginConfigKey RULE_COLOUR			= new PluginConfigKey("settings.rule-colour",		"GREEN");
 	
-	GLOBAL_RULES(			"global-rules",				Arrays.asList("Don't be evil.")),
-	WORLD_RULES(			"world-rules",				Arrays.asList());
-	
-	private String key;
-	private Object defaultValue;
-	
-	private Config(String key, Object defaultValue){
-		this.key = key;
-		this.defaultValue = defaultValue;
-	}
-	
-	public String getKey(){
-		return this.key;
-	}
-	
-	public Object getDefault(){
-		return this.defaultValue;
-	}
+	public static final PluginConfigKey GLOBAL_RULES			= new PluginConfigKey("global-rules",				Arrays.asList("Don't be evil."));
+	public static final PluginConfigKey WORLD_RULES			= new PluginConfigKey("world-rules",				Arrays.asList());
 	
 }
