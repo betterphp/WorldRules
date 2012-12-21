@@ -9,9 +9,9 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import uk.co.jacekk.bukkit.baseplugin.v5.BasePlugin;
-import uk.co.jacekk.bukkit.baseplugin.v5.config.PluginConfig;
-import uk.co.jacekk.bukkit.baseplugin.v5.config.PluginConfigKey;
+import uk.co.jacekk.bukkit.baseplugin.v6.BasePlugin;
+import uk.co.jacekk.bukkit.baseplugin.v6.config.PluginConfig;
+import uk.co.jacekk.bukkit.baseplugin.v6.config.PluginConfigKey;
 import uk.co.jacekk.bukkit.worldrules.commands.RulesExecutor;
 import uk.co.jacekk.bukkit.worldrules.listeners.SendRulesListener;
 
