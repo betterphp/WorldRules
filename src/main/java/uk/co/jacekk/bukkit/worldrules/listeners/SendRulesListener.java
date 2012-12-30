@@ -30,7 +30,7 @@ public class SendRulesListener extends BaseListener<WorldRules> {
 		
 		ArrayList<String> rules = plugin.getRulesForWorld(world);
 		
-		if (rules.size() > 0){
+		if (!rules.isEmpty()){
 			plugin.sendRules(player, world, rules);
 		}
 	}

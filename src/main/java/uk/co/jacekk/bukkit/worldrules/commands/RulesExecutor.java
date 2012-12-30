@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 
 import uk.co.jacekk.bukkit.baseplugin.v6.command.BaseCommandExecutor;
 import uk.co.jacekk.bukkit.baseplugin.v6.command.CommandHandler;
+import uk.co.jacekk.bukkit.baseplugin.v6.command.CommandTabCompletion;
 import uk.co.jacekk.bukkit.worldrules.Permission;
 import uk.co.jacekk.bukkit.worldrules.WorldRules;
 
@@ -19,6 +20,7 @@ public class RulesExecutor extends BaseCommandExecutor<WorldRules> {
 	}
 	
 	@CommandHandler(names = {"worldrules", "wr"}, description = "Provides various commands for managing the rules", usage = "[option]")
+	@CommandTabCompletion({"reload"})
 	public void worldrules(CommandSender sender, String label, String[] args){
 		if (args.length == 0){
 			sender.sendMessage(ChatColor.RED + "Usage: /worldrules <option> [args]");
@@ -53,7 +55,7 @@ public class RulesExecutor extends BaseCommandExecutor<WorldRules> {
 			
 			ArrayList<String> rules = plugin.getRulesForWorld(player.getWorld());
 			
-			if (rules.size() == 0){
+			if (!rules.isEmpty()){
 				player.sendMessage(ChatColor.RED + "There are no rules defined for this world.");
 				return;
 			}
