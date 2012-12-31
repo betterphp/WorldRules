@@ -38,7 +38,7 @@
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>bukkit</artifactId>
-			<version>1.4.5-R1.0</version>
+			<version>1.4.6-R0.3</version>
 			<scope>compile</scope>
 		</dependency>
 	</dependencies>
@@ -46,7 +46,7 @@
 	<build>
 		<defaultGoal>install</defaultGoal>
 		<directory>${basedir}/target</directory>
-		<finalName>${project.artifactId}-${project.version}</finalName>
+		<finalName>${project.name}</finalName>
 		
 		<resources>
 			<resource>
