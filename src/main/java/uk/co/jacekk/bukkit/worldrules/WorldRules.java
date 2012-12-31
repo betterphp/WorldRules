@@ -29,6 +29,12 @@ public class WorldRules extends BasePlugin {
 		this.commandManager.registerCommandExecutor(new RulesExecutor(this));
 	}
 	
+	/**
+	 * Fetches a list of rules enabled in a specific world.
+	 * 
+	 * @param world The world to fetch the rules for.
+	 * @return A list of enabled rules (not numbered).
+	 */
 	public ArrayList<String> getRulesForWorld(final World world){
 		ArrayList<String> rules = new ArrayList<String>();
 		
@@ -38,6 +44,13 @@ public class WorldRules extends BasePlugin {
 		return rules;
 	}
 	
+	/**
+	 * Formats and sends a list of rules to the user.
+	 * 
+	 * @param sender The CommandSender to receive the rules.
+	 * @param world The World that the rules are for.
+	 * @param rules The list of rules.
+	 */
 	public void sendRules(CommandSender sender, World world, ArrayList<String> rules){
 		ChatColor headerColour, ruleColour;
 		
@@ -66,10 +79,21 @@ public class WorldRules extends BasePlugin {
 		sender.sendMessage(ChatColor.BLACK + " ");
 	}
 	
+	/**
+	 * Formats and sends a list of rules to the user.
+	 * 
+	 * @param sender The CommandSender to receive the rules.
+	 * @param world The World to send rules for.
+	 */
 	public void sendRules(CommandSender sender, World world){
 		this.sendRules(sender, world, this.getRulesForWorld(world));
 	}
 	
+	/**
+	 * Formats and sends a list of rules to the player.
+	 * 
+	 * @param player The Player to receive the rules.
+	 */
 	public void sendRules(Player player){
 		World world = player.getWorld();
 		
