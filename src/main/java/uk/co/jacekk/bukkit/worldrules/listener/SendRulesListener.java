@@ -1,4 +1,4 @@
-package uk.co.jacekk.bukkit.worldrules.listeners;
+package uk.co.jacekk.bukkit.worldrules.listener;
 
 import java.util.ArrayList;
 

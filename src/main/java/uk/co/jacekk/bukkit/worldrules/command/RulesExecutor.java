@@ -1,4 +1,4 @@
-package uk.co.jacekk.bukkit.worldrules.commands;
+package uk.co.jacekk.bukkit.worldrules.command;
 
 import java.util.ArrayList;
 

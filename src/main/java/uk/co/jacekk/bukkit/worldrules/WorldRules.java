@@ -12,8 +12,8 @@ import org.bukkit.entity.Player;
 import uk.co.jacekk.bukkit.baseplugin.v6.BasePlugin;
 import uk.co.jacekk.bukkit.baseplugin.v6.config.PluginConfig;
 import uk.co.jacekk.bukkit.baseplugin.v6.config.PluginConfigKey;
-import uk.co.jacekk.bukkit.worldrules.commands.RulesExecutor;
-import uk.co.jacekk.bukkit.worldrules.listeners.SendRulesListener;
+import uk.co.jacekk.bukkit.worldrules.command.RulesExecutor;
+import uk.co.jacekk.bukkit.worldrules.listener.SendRulesListener;
 
 public class WorldRules extends BasePlugin {
 	
