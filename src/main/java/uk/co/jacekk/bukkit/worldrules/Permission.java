@@ -2,7 +2,7 @@ package uk.co.jacekk.bukkit.worldrules;
 
 import org.bukkit.permissions.PermissionDefault;
 
-import uk.co.jacekk.bukkit.baseplugin.v6.permissions.PluginPermission;
+import uk.co.jacekk.bukkit.baseplugin.v9.permissions.PluginPermission;
 
 public class Permission {
 	
