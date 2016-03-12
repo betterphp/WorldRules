@@ -1,0 +1,6 @@
+/target/
+
+# Eclipse cruft
+.classpath
+.project
+.settings/
